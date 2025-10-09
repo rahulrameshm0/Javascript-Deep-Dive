@@ -16,7 +16,6 @@ console.log(add(5,8))
 console.log(add(5,12))
 
 
-
 function fruits(apple, orange){
     // console.log(apple, orange)
     const juice = `Juice with ${apple} apples and ${orange} orange`
@@ -192,19 +191,55 @@ console.log(totals)
 
 const objects = {
     fname : "Rahul",
-    lname : "Rames",
+    lname : "Ramesh",
     birth : 1998,
     job : 'Sofware Developer',
     friends : ['james','jonny','manu','mani'],
 
     calc4: function(){
-        this.age = 2018 - this.birth;
+        this.age = 2025 - this.birth;
         return this.age;
     }
 };
 
-console.log(objects.age);
-console.log(objects.age);
-console.log(objects.age);
+console.log(`Your total age is: ${objects.calc4()}`)
+
+
+// console.log(objects.age);
+// console.log(objects.age);
+// console.log(objects.age);
 
 // objects['fname'] = 'Rohith';
+
+const mark = {
+    fullname: 'Binsy Ramesh',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function(){
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+const james = {
+    fullname: 'Rahul Ramesh',
+    kg: 92,
+    height: 1.95,
+
+    calcBMI: function(){
+    this.bmi = this.kg / this.height ** 2;
+    return this.bmi;
+    }
+
+};
+
+mark.calcBMI();
+james.calcBMI();
+console.log(james.bmi, mark.bmi)
+
+if (mark.bmi > james.bmi){
+    console.log(`${mark.fullname} has higher BMI than ${james.fullname}`)
+}else{
+    console.log(`${james.fullname} has higher BMI than ${mark.fullname}`)
+
+}
