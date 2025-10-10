@@ -276,7 +276,7 @@ for(let i=0; i<year.length; i++){
 }
 
 console.log('--ONLY Numbers--')
-for(let i=0; i<year.length; i++){
+for (let i=0; i<year.length; i++){
     if(typeof jonas[i] !== 'number') continue;
     console.log(jonas[i], typeof(jonas[i]))
 }
@@ -290,29 +290,40 @@ const manu = [
     "True"
 ];
 
-for(let i = manu.length - 1; i>=0 ;i--){
+for (let i = manu.length - 1; i>=0 ;i--){
     console.log(manu[i])
 }
 
 const check_prime_numbers = [10,5,6,7,9,4,1,2,3,8]
 const prime_numbers = []
-for(let i = 0; i < check_prime_numbers.length; i++){
+for (let i = 0; i < check_prime_numbers.length; i++){
     let is_prime = true
     const num = check_prime_numbers[i] 
 
-    if(num < 2){
+    if (num < 2){
         is_prime = false
     }
-
-    for(let j = 2; j < num; j++){
+ 
+    for (let j = 2; j < num; j++){
         if(num % j === 0){
             is_prime = false
         }
     }
 
-    if(is_prime){
+    if (is_prime){
         prime_numbers.push(num)
     }
 }
 
 console.log(prime_numbers)
+
+// dice gamee
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice)
+
+while (dice !== 6){
+    console.log(`you have rolled ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('loop is about to end');
+}
