@@ -243,3 +243,40 @@ if (mark.bmi > james.bmi){
     console.log(`${james.fullname} has higher BMI than ${mark.fullname}`)
 
 }
+
+for(let rep = 1; rep<=10; rep++){
+    console.log(rep)
+}
+
+const jonas = [
+    'jonas',
+    2025-1998,
+    'Engineer',
+    ['Rahul', 'James', 'Jonny'],
+    "True   "
+];
+
+for(let i = 0; i<jonas.length; i++){
+    console.log(jonas[i]);
+}
+
+const year = [1990, 1997, 1998, 1999, 2000];
+const age = []
+
+for(let i=0; i<year.length; i++){
+    age.push(2025 - year[i])
+}
+console.log(age)
+
+
+console.log('--ONLY STRINGS--')
+for(let i=0; i<year.length; i++){
+    if(typeof jonas[i] !== 'string') continue;
+    console.log(jonas[i], typeof(jonas[i]))
+}
+
+console.log('--ONLY Numbers--')
+for(let i=0; i<year.length; i++){
+    if(typeof jonas[i] !== 'number') continue;
+    console.log(jonas[i], typeof(jonas[i]))
+}
