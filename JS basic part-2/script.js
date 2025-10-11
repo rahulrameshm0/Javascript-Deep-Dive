@@ -150,14 +150,14 @@ if (fam.includes('Manual')){
 }
 
 
-const calcTip = bill =>  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.12; 
-console.log(calcTip(50))
+// const calcTip = bill =>  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.12; 
+// console.log(calcTip(50))
  
-const bills = [125,555,44];
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
-const totals = [bills[0] + tips[1]]
-console.log(bills, tips)
-console.log(totals)
+// const bills = [125,555,44];
+// const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])]
+// const totals = [bills[0] + tips[1]]
+// console.log(bills, tips)
+// console.log(totals)
 
 // objects
 
@@ -327,3 +327,32 @@ while (dice !== 6){
     dice = Math.trunc(Math.random() * 6) + 1;
     if (dice === 6) console.log('loop is about to end');
 }
+
+
+const calcTip = bill =>  bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.12; 
+console.log(calcTip(50))
+ 
+const bills = [22,256,176,256,658,563]
+const tips = [];
+const totals = [];
+
+for (let i = 0; i < bills.length; i++){
+    const tip = calcTip(bills[i]);
+    tips.push(tip);
+    totals.push(tip + bills[i]);
+}
+
+console.log(`list of Bills: ${bills}, List of Tips: ${tips}, Totals: ${totals}`);
+
+
+// Caculate the average
+const calcavg = function(array){
+    let sum = 0;
+    for (let i = 0; i < array.length; i++){
+        sum += array[i];
+    };
+    console.log(sum)
+    return sum / array.length
+}
+
+console.log(calcavg([2,4,5]))
