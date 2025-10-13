@@ -356,3 +356,4 @@ const calcavg = function(array){
 }
 
 console.log(calcavg([2,4,5]))
+
