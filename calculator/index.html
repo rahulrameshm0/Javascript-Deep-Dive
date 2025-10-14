@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1>SIMPLE Calculator</h1>
+        <div class="input-number">
+            <input type="text" id="input">
+            <span class="x">x</span>
+        </div>
+        <div class="item-1">
+            <button type="button" value="c" class="C" onclick="clearscreen()">C</button>
+            <button type="button" value="()" class="peranthicies" onclick="clickbtn('()')">()</button>
+            <button type="button" value="%" class="percentage" onclick="clickbtn('%')">%</button>
+            <button type="button" value="/" class="divide" onclick="clickbtn('/')">/</button>
+        </div>
+        <div class="item-2">
+            <button type="button" value="7" class="seven" onclick="clickbtn('7')">7</button>
+            <button type="button" value="8" class="eight" onclick="clickbtn('8')">8</button>
+            <button type="button" value="9" class="nine" onclick="clickbtn('9')">9</button>
+            <button type="button" value="X" class="multiply" onclick="clickbtn('*')">X</button>
+        </div>
+        <div class="item-3">
+            <button type="button" value="4" class="four" onclick="clickbtn('4')">4</button>
+            <button type="button" value="5" class="five" onclick="clickbtn('5')">5</button>
+            <button type="button" value="6" class="six" onclick="clickbtn('6')">6</button>
+            <button type="button" value="-" class="minus" onclick="clickbtn('-')">-</button>
+        </div>
+        <div class="item-4">
+            <button type="button" value="1" class="one" onclick="clickbtn('1')">1</button>
+            <button type="button" value="2" class="two" onclick="clickbtn('2')">2</button>
+            <button type="button" value="3" class="three" onclick="clickbtn('3')">3</button>
+            <button type="button" value="+" class="plus" onclick="clickbtn('+')">+</button>
+        </div>
+        <div class="item-4">
+            <button type="button" value="+/-" class="addition" onclick="clickbtn(')-')">+/-</button>
+            <button type="button" value="0" class="zero" onclick="clickbtn('0')">0</button>
+            <button type="button" value="." class="punctuation" onclick="clickbtn('.')">.</button>
+            <button type="button" value="=" class="plus" onclick="findresult()">=</button>
+        </div>
+    </main>
+
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
