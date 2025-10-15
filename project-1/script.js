@@ -17,6 +17,8 @@ document.querySelector('.guess').value = 20;
 
 let computer_number = Math.trunc(Math.random() * 20) + 1;
 let count = 20;
+let highscore = 0;
+
 document.querySelector('.score').textContent = count;
 document.querySelector('.highscore').textContent = 0;
 
@@ -24,48 +26,58 @@ document.querySelector('.check').addEventListener('click', function(){
     const guess = Number(document.querySelector('.guess').value);
     if (!guess){
         document.querySelector('.message').textContent = "Enter a Number";
-    }else if(guess === computer_number){
+    }else if (guess === computer_number){
+        count ++
         document.querySelector('.message').textContent = "Correct Number";
         document.querySelector('.number').textContent = computer_number
-        count += 1
-        document.querySelector('.score').textContent = count
-        document.querySelector('.highscore').textContent = count
-        document.querySelector('body').style.background = 'green'
-       
+        document.querySelector('body').style.background = 'green';
 
-    }else if (guess > computer_number){
-        if (count < 1){
+        if (count > highscore){
+            highscore = count;
+            document.querySelector('.highscore').textContent = highscore;
+        }
+    }else if (guess !== computer_number){
+        count --
+        if (count > 1){
+            document.querySelector('.message').textContent = guess > computer_number ? "Too High" : "Too Low..";
+        }else{
             document.querySelector('.message').textContent = "You have lost the game";
-        }else{
-            count -= 1
-            document.querySelector('.message').textContent = "Too High";
         }
-        document.querySelector('.score').textContent = count
-        
-        document.querySelector('body').style.background = 'black'
-        
-    }else if (guess < computer_number){
-        if (count < 1){
-            document.querySelector('.message').textContent = "You have lost the game 💥";
-            document.querySelector('.message').style.color = "Red";
-        }else{
-            count -= 1
-            document.querySelector('.message').textContent = "Too Low";
-        }
-        document.querySelector('.score').textContent = count
-        document.querySelector('body').style.background = 'black'
-        }
-    });
+        document.querySelector('.score').textContent = count;
+        // document.querySelector('body').style.background = 'black';
+    }
 
+});
 
 document.querySelector('.again').addEventListener('click', function(){
-    let count = 20
-    let computer_number = Math.trunc(Math.random() * 20) + 1;
+    count = 20
+    computer_number = Math.trunc(Math.random() * 20) + 1;
     document.querySelector('.message').textContent = 'start guessing...';
     document.querySelector('.number').textContent = '?';
-    document.querySelector('.score').textContent = '20';
-    document.querySelector('.highscore').textContent = '0';
     document.querySelector('.guess').value = '';
     document.querySelector('body').style.background = 'black';
-   
-});
+})
+
+    // }else if (guess > computer_number){
+    //     if (count < 1){
+    //         document.querySelector('.message').textContent = "You have lost the game";
+    //     }else{
+    //         count -= 1
+    //         document.querySelector('.message').textContent = "Too High";
+    //     }
+    //     document.querySelector('.score').textContent = count
+        
+    //     document.querySelector('body').style.background = 'black'
+        
+    // }else if (guess < computer_number){
+    //     if (count < 1){
+    //         document.querySelector('.message').textContent = "You have lost the game 💥";
+    //         document.querySelector('.message').style.color = "Red";
+    //     }else{
+    //         count -= 1
+    //         document.querySelector('.message').textContent = "Too Low";
+    //     }
+    //     document.querySelector('.score').textContent = count
+    //     document.querySelector('body').style.background = 'black'
+    // }
+    // });
