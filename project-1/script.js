@@ -15,7 +15,7 @@ document.querySelector('.label-score').textContent = 50;
 document.querySelector('.guess').value = 20;
 */
 
-const computer_number = Math.trunc(Math.random() * 20) + 1;
+let computer_number = Math.trunc(Math.random() * 20) + 1;
 let count = 20;
 document.querySelector('.score').textContent = count;
 document.querySelector('.highscore').textContent = 0;
@@ -56,3 +56,16 @@ document.querySelector('.check').addEventListener('click', function(){
         document.querySelector('body').style.background = 'black'
         }
     });
+
+
+document.querySelector('.again').addEventListener('click', function(){
+    let count = 20
+    let computer_number = Math.trunc(Math.random() * 20) + 1;
+    document.querySelector('.message').textContent = 'start guessing...';
+    document.querySelector('.number').textContent = '?';
+    document.querySelector('.score').textContent = '20';
+    document.querySelector('.highscore').textContent = '0';
+    document.querySelector('.guess').value = '';
+    document.querySelector('body').style.background = 'black';
+   
+});

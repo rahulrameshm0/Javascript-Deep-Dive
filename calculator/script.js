@@ -1,6 +1,8 @@
 let screen = document.getElementById('input');
 
 function clickbtn(value){
+    // console.log("Button clicked:", value);
+    // console.log("Before update, screen.value:", screen.value);
     screen.value += value
 }
 
