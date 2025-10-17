@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    text-align: center;
+    color: rgb(150, 26, 26);
+}
+
+body {
+    /* display: flex;
+    justify-content: center;   
+    align-items: center;       
+    height: 100vh;             
+    margin: 0;*/
+    font-family: sans-serif; 
+    background: linear-gradient(to right, rgb(240, 130, 5), rgb(234, 42, 42), rgb(228, 68, 228));
+}
+
+#new-game{
+    margin-bottom: 5.5rem;
+    margin-top: 2.5rem;
+}
+
+.player-1{
+    margin-bottom: 1.5rem;
+}
+
+.player-2{
+    margin-bottom: 1.5rem;
+}
+
+.player{
+    margin-bottom: 5.5rem;
+}
+
+.players{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    gap: 8.5rem;
+}
+
+.total{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4.5rem;
+}
+
+/* .score{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
