@@ -22,13 +22,16 @@ let highscore = 0;
 document.querySelector('.score').textContent = count;
 document.querySelector('.highscore').textContent = 0;
 
+function displayMessage(messages){
+    document.querySelector('.message').textContent = messages;
+}
+
 document.querySelector('.check').addEventListener('click', function(){
     const guess = Number(document.querySelector('.guess').value);
     if (!guess){
         document.querySelector('.message').textContent = "Enter a Number";
     }else if (guess === computer_number){
-        count ++
-        document.querySelector('.message').textContent = "Correct Number";
+        displayMessage('Correct Number 🎉')
         document.querySelector('.number').textContent = computer_number
         document.querySelector('body').style.background = 'green';
 
@@ -36,23 +39,25 @@ document.querySelector('.check').addEventListener('click', function(){
             highscore = count;
             document.querySelector('.highscore').textContent = highscore;
         }
+
     }else if (guess !== computer_number){
         count --
         if (count > 1){
-            document.querySelector('.message').textContent = guess > computer_number ? "Too High" : "Too Low..";
+            displayMessage(guess > computer_number ? "Too High" : "Too Low..");
+            // document.querySelector('.message').textContent = guess > computer_number ? "Too High" : "Too Low..";
         }else{
-            document.querySelector('.message').textContent = "You have lost the game";
+             displayMessage('You have lost the game')
+            // document.querySelector('.message').textContent = "You have lost the game";
         }
         document.querySelector('.score').textContent = count;
         // document.querySelector('body').style.background = 'black';
     }
-
 });
 
 document.querySelector('.again').addEventListener('click', function(){
     count = 20
     computer_number = Math.trunc(Math.random() * 20) + 1;
-    document.querySelector('.message').textContent = 'start guessing...';
+    displayMessage('Start Guesing');
     document.querySelector('.number').textContent = '?';
     document.querySelector('.guess').value = '';
     document.querySelector('body').style.background = 'black';
@@ -81,3 +86,4 @@ document.querySelector('.again').addEventListener('click', function(){
     //     document.querySelector('body').style.background = 'black'
     // }
     // });
+
