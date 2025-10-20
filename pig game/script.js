@@ -3,11 +3,17 @@
 
 // Storing Element
 const score1 = document.querySelector('#score-1');
-const score2 = document.getElementById('#score-2');
+const score2 = document.getElementById('score-2');
+const current_1 = document.getElementById('score--1');
+const current_2 = document.getElementById('score--2');
 const dice_roll = document.querySelector('.dice');
 const new_btn = document.querySelector('.new-btn');
-const roll = document.querySelector('.roll-dice');
+const roll = document.querySelector('.roll-btn');
 const hold = document.querySelector('.hold');
+
+// currecnt score
+
+let currentScore = 0;
 
 // Starting Comdition
 score1.textContent = 0;
@@ -17,6 +23,15 @@ dice_roll.classList.add('hidden');
 // Rolling Dice functionality
 roll.addEventListener('click', function(){
     const dice = Math.trunc(Math.random() * 6) + 1;
+    console.log(dice)
     dice_roll.classList.remove('hidden');
     dice_roll.src = `dice-${dice}.png`;
+
+    if (dice !== 1){
+        currentScore += dice;
+        current_1.textContent = currentScore
+
+    }else{
+        // switch to next player
+    }
 });

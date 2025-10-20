@@ -27,6 +27,7 @@ body {
     border-radius: 1.5rem;
     background-color: #fff;
     cursor: pointer;
+    box-shadow: 0 0.4rem 0.5rem 0.5rem rgba(0,0,0,0.1);
 }
 
 .player-1{
@@ -48,13 +49,19 @@ body {
     gap: 8.5rem;
 }
 
-.current-1, .current-2{
+.current-1, 
+.current-2{
+    box-shadow: 0 0.4rem 0.5rem 0.5rem rgba(0,0,0,0.1);
     text-transform: uppercase;
     background-color: rgb(206, 46, 46);
     padding: 3rem 2rem; 
 }
 
-.score{
+.score-1{
+    margin-top: 5rem;
+}
+
+.score-2{
     margin-top: 5rem;
 }
 
@@ -65,12 +72,13 @@ body {
     gap: 10.5rem;
 }
 
-.role-dice{
+.roll-btn{
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 1.5rem;
     /* background-color: #fff; */
     cursor: pointer;
+    box-shadow: 0 0.4rem 0.5rem 0.5rem rgba(0,0,0,0.1);
 }
 .hold{
     padding: 0.5rem 1rem;
@@ -78,6 +86,7 @@ body {
     border-radius: 1.5rem;
     /* background-color: #fff; */
     cursor: pointer;
+    box-shadow: 0 0.4rem 0.5rem 0.5rem rgba(0,0,0,0.1);
 }
 
 /* .score{
@@ -87,6 +96,8 @@ body {
 } */
 
 .dice{
-    width: 10%;
+    width: 30%;
+    box-shadow: 0 0.4rem 0.5rem 0.5rem rgba(0,0,0,0.1);
     /* display: none; */
 }
+
