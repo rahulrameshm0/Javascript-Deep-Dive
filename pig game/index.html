@@ -8,25 +8,29 @@
 </head>
 <body>
     <main>
-        <button id="new-game">🔄 New Game</button>
+        <button class="new-btn">🔄 New Game</button>
         <div class="players">
             <div class="player-1-title player">
                 <h1 class="player-1">PLAYER 1</h1>
-                <h1 id="player-1-score">0</h1>
+                <h1 id="score-1">0</h1>
             </div>
+            <img src="images/dice-5.png" alt="Playing dice" class="dice" />
             <div class="player-2-title player">
                 <h1 class="player-2">PLAYER 2</h1>
-                <h1 id="player-2-score">0</h1>    
+                <h1 id="score-2">0</h1>     
             </div>
         </div>
 
         <div class="total">
-            <h4 class="current-1">Current</h4>
+             <h4 class="current-2">Current <br><span class="score">0</span> </h4>
             <div class="role-dice">
-                <button type="button" id="#role-dice">🎲 ROLL DICE</button><br>
-                <button type="button" id="#role-dice">🤝 HOLD</button>
+                <button type="button" class="role-dice">🎲 ROLL DICE</button>
+                <br><br>
+                <button type="button" class="hold">🤝 HOLD</button>
             </div>
-            <h4 class="current-2">Current</h4>
+            <div class="current-player-1">
+                <h4 class="current-2">Current <br><span class="score">0</span> </h4>
+            </div>
         </div>
     </main>
 </body>
