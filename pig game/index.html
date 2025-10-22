@@ -7,34 +7,46 @@
     <title>Roll Dice</title>
 </head>
 <body>
+    <button class="new-btn">🔄 New Game</button>
     <main>
-        <button class="new-btn">🔄 New Game</button>
-        <div class="players">
-            <div class="player-1-title player">
-                <h1 class="player-1">PLAYER 1</h1>
-                <h1 id="score-1">0</h1>
+        <section class="player-1-title">
+            <div class="players">
+                <div class="player player--active">
+                    <h1 class="player--2">PLAYER 1</h1>
+                    <h1 id="score--1">0</h1>
+                    <h4 class="current-1">Current <br><span id="current--1">0</span> </h4>
+                </div>
             </div>
+        </section>
+
+        <section>
             <div class="dice-img">
                 <img src="dice-5.png" alt="Playing dice" class="dice" />
             </div>
-            <div class="player-2-title player">
-                <h1 class="player-2">PLAYER 2</h1>
-                <h1 id="score-2">0</h1>     
-            </div>
-        </div>
+            <button type="button" class="roll-btn">🎲 ROLL DICE</button>
+            <br><br>
+            <button type="button" class="hold">🤝 HOLD</button>
+        </section>
 
-        <div class="total">
-             <h4 class="current-2">Current <br><span id="score--1">0</span> </h4>
-            <div class="role-dice">
-                <button type="button" class="roll-btn">🎲 ROLL DICE</button>
-                <br><br>
-                <button type="button" class="hold">🤝 HOLD</button>
+        <section class="player-2-title">
+             <div class="players">
+                 <div class="player player--active">
+                     <h1 class="player--2">PLAYER 2</h1>
+                     <h1 id="score--2">0</h1>     
+                     <h4 class="current-2">Current <br><span id="current--2">0</span> </h4>
+                     
+                 </div>
             </div>
-            <div class="current-player-1">
-                <h4 class="current-2">Current <br><span id="score--2">0</span> </h4>
-            </div>
-        </div>
+        </section>
+
     </main>
     <script src="script.js"></script>
 </body>
 </html>
+
+<!-- <div class="total">
+    <div class="role-dice">
+    </div>
+    <div class="current-player-1">
+    </div>
+</div> -->

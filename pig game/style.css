@@ -7,6 +7,9 @@
 main{
     text-align: center;
     color: rgb(150, 26, 26);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body {
@@ -20,6 +23,8 @@ body {
 }
 
 .new-btn{
+    /* text-align: center; */
+    margin-left: 45%;
     margin-bottom: 5.5rem;
     margin-top: 2.5rem;
     padding: 0.5rem 1rem;
@@ -34,7 +39,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.player-2{
+.player{
     margin-bottom: 1.5rem;
 }
 
@@ -57,13 +62,13 @@ body {
     padding: 3rem 2rem; 
 }
 
-.score-1{
+/* .score-1{
     margin-top: 5rem;
 }
 
 .score-2{
     margin-top: 5rem;
-}
+} */
 
 .total{
     display: flex;
@@ -98,6 +103,11 @@ body {
 .dice{
     width: 30%;
     box-shadow: 0 0.4rem 0.5rem 0.5rem rgba(0,0,0,0.1);
+    margin-bottom: 5rem;
     /* display: none; */
 }
 
+#score--1,
+#score--2{
+    margin-bottom: 5rem;
+}
