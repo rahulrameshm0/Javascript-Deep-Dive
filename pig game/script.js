@@ -15,6 +15,13 @@ const roll = document.querySelector('.roll-btn');
 
 const hold = document.querySelector('.hold');
 
+let switchPlayer = function(){
+    document.getElementById(`current--${activePlayer + 1}`).textContent = 0;
+        activePlayer = activePlayer === 0 ? 1 : 0;
+        currentScore = 0;
+        // document.querySelector(currentScore).textContent = currentScore;
+    }
+
 // currecnt score
 const scores = [0,0];
 let currentScore = 0;
@@ -39,10 +46,7 @@ roll.addEventListener('click', function(){
         
     }else{
         // switch to next player
-        document.getElementById(`current--${activePlayer + 1}`).textContent = 0;
-        activePlayer = activePlayer === 0 ? 1 : 0;
-        currentScore = 0;
-        // document.querySelector(currentScore).textContent = currentScore;
+        switchPlayer()
         }
 });     
 
@@ -52,8 +56,12 @@ hold.addEventListener('click', function() {
     document.getElementById(`score--${activePlayer + 1}`).textContent = scores[activePlayer];
 
     if (scores[activePlayer] >= 20){
-        document.querySelector(`.player-${activePlayer + 1}-title`).style.backgroundColor = 'gold';
+        const playerTitle = document.querySelector(`.player-${activePlayer + 1}-title`);
+        playerTitle.classList.add('winner');
+        playerTitle.textContent = `Player ${activePlayer + 1} Wins 🎉`; 
+        // document.querySelector('.roll-btn').disabled = true;
+        // document.querySelector('.hold-btn').disabled = true;
+    }else{
+        switchPlayer()
     }
-
-    currentScore = 0
 }); 

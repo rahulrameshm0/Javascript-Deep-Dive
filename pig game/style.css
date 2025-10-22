@@ -111,3 +111,29 @@ body {
 #score--2{
     margin-bottom: 5rem;
 }
+
+.winner {
+  background: linear-gradient(90deg, #ffcc00, #ff9900, #ff66cc);
+  background-size: 300% 300%;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 15px 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 20px 5px rgba(255, 215, 0, 0.6);
+  animation: glow 2s infinite, gradientMove 4s ease infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px gold; }
+  50% { box-shadow: 0 0 25px orange; }
+  100% { box-shadow: 0 0 10px gold; }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
