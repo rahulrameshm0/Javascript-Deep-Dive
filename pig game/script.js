@@ -43,13 +43,11 @@ roll.addEventListener('click', function(){
         currentScore += dice;
         document.getElementById(`current--${activePlayer + 1}`).textContent = currentScore;
         // current_1.textContent = currentScore
-        
     }else{
         // switch to next player
         switchPlayer()
         }
-});     
-
+});
 
 hold.addEventListener('click', function() {
     scores[activePlayer] += currentScore;
