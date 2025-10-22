@@ -26,6 +26,7 @@ let switchPlayer = function(){
 const scores = [0,0];
 let currentScore = 0;
 let activePlayer = 0;
+let playing = true;
 
 // Starting Comdition
 score1.textContent = 0;
@@ -34,32 +35,46 @@ dice_roll.classList.add('hidden');
 
 // Rolling Dice functionality
 roll.addEventListener('click', function(){
-    const dice = Math.trunc(Math.random() * 6) + 1;
-    // console.log(dice)
-    dice_roll.classList.remove('hidden');
-    dice_roll.src = `dice-${dice}.png`;
-
-    if (dice !== 1){
-        currentScore += dice;
-        document.getElementById(`current--${activePlayer + 1}`).textContent = currentScore;
-        // current_1.textContent = currentScore
-    }else{
-        // switch to next player
-        switchPlayer()
+    if (playing){
+        const dice = Math.trunc(Math.random() * 6) + 1;
+        // console.log(dice)
+        dice_roll.classList.remove('hidden');
+        dice_roll.src = `dice-${dice}.png`;
+        
+        if (dice !== 1){
+            currentScore += dice;
+            document.getElementById(`current--${activePlayer + 1}`).textContent = currentScore;
+            // current_1.textContent = currentScore
+        }else{
+            // switch to next player
+            switchPlayer()
         }
+    }
 });
 
 hold.addEventListener('click', function() {
-    scores[activePlayer] += currentScore;
-    document.getElementById(`score--${activePlayer + 1}`).textContent = scores[activePlayer];
-
-    if (scores[activePlayer] >= 20){
-        const playerTitle = document.querySelector(`.player-${activePlayer + 1}-title`);
-        playerTitle.classList.add('winner');
-        playerTitle.textContent = `Player ${activePlayer + 1} Wins 🎉`; 
-        // document.querySelector('.roll-btn').disabled = true;
-        // document.querySelector('.hold-btn').disabled = true;
-    }else{
-        switchPlayer()
+    if (playing){
+        scores[activePlayer] += currentScore;
+        document.getElementById(`score--${activePlayer + 1}`).textContent = scores[activePlayer];
+        
+        if (scores[activePlayer] >= 20){
+            playing = false;
+            const playerTitle = document.querySelector(`.player-${activePlayer + 1}-title`);
+            playerTitle.classList.add('winner');
+            playerTitle.textContent = `Player ${activePlayer + 1} Wins 🎉`; 
+            // document.querySelector('.roll-btn').disabled = true;
+            // document.querySelector('.hold-btn').disabled = true;
+        }else{
+            switchPlayer()
+        }
     }
 }); 
+
+
+new_btn.addEventListener('click', function(){
+    score1.textContent = 0;
+    score2.textContent = 0;
+    current_1.textContent = 0;
+    current_2.textContent = 0;
+    playerTitle.classList.remove('winner');
+});
