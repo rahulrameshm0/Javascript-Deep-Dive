@@ -15,6 +15,9 @@ const roll = document.querySelector('.roll-btn');
 
 const hold = document.querySelector('.hold');
 
+const playerTitle1 = document.querySelector('.player-1-title');
+const playerTitle2 = document.querySelector('.player-2-title');
+
 let switchPlayer = function(){
     document.getElementById(`current--${activePlayer + 1}`).textContent = 0;
         activePlayer = activePlayer === 0 ? 1 : 0;
@@ -71,10 +74,43 @@ hold.addEventListener('click', function() {
 }); 
 
 
-new_btn.addEventListener('click', function(){
+// new_btn.addEventListener('click', function(){
+//     score1.textContent = 0;
+//     score2.textContent = 0;
+//     current_1.textContent = 0;
+//     current_2.textContent = 0;
+
+//     scores[0] = 0;
+//     scores[1] = 0;
+//     currentScore = 0;
+//     activePlayer = 0;
+//     playing = true;
+
+//     // Reset player titles
+//     playerTitle1.textContent = 'PLAYER 1';
+//     playerTitle2.textContent = 'PLAYER 2';
+
+//     // Remove winner class from both players
+//     playerTitle1.classList.remove('winner');
+//     playerTitle2.classList.remove('winner');
+
+//     // Hide dice again
+//     dice_roll.classList.add('hidden');
+//     // playerTitle.classList.remove('winner');
+// });
+
+
+new_btn.addEventListener('click', function() {
     score1.textContent = 0;
     score2.textContent = 0;
     current_1.textContent = 0;
     current_2.textContent = 0;
-    playerTitle.classList.remove('winner');
+
+    score1.textContent = 0;
+    score2.textContent = 0;
+    current_1.textContent = 0;
+    current_2.textContent = 0;
+    // score1.textContent = 0;
+
+  dice_roll.classList.add('hidden');
 });
