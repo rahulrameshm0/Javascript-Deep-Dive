@@ -114,4 +114,3 @@ new_btn.addEventListener('click', function() {
 
   dice_roll.classList.add('hidden');
 });
-// 
