@@ -62,8 +62,22 @@ movements.forEach(function(movement, index){
     }
 });
 
+
+// MAP
+console.log('-----MAP-----');
 const currencies = new Map([
     ['USD', 'United state dollar'],
     ['EUR', 'Euro'],
     ['GBP', 'Pound Sterling']
 ]);
+
+currencies.forEach(function(value, key, map){
+    console.log(`${key}: ${value}`)
+});
+
+// SET
+const currenciesUnique = new Set(['USD', 'EUR', 'IND', 'EUR'])
+console.log(currenciesUnique)
+currenciesUnique.forEach(function(value, key, map){
+    console.log(`${key}: ${value}`);
+});
