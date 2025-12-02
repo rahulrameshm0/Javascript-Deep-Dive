@@ -81,3 +81,27 @@ console.log(currenciesUnique)
 currenciesUnique.forEach(function(value, key, map){
     console.log(`${key}: ${value}`);
 });
+
+
+// const juliaData = [4,2,5,8,3,4,1,5,2] 
+// const kateData = [14,12,5,18,3,4,11,9,12] 
+
+function checkDogs(dogsJulia, dogsKate) {
+    const juliaCorrected = dogsJulia.slice();
+    juliaCorrected.splice(0, 1);
+    juliaCorrected.splice(-2);
+    // console.log(juliaCorrected)
+    
+    const dogs = juliaCorrected.concat(dogsKate)
+    console.log(dogs)
+
+    dogs.forEach(function(dogs, i){
+        if (dogs >= 3){
+            console.log(`The dog number is ${i + 1} an adult and it is ${dogs} years old`)
+        }else{
+            console.log(`The dog number is ${i + 1} is still a puppy`)
+        }
+    });
+}
+
+checkDogs([3,5,2,7,12],[4,1,15,8,3])
