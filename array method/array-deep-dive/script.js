@@ -191,3 +191,33 @@ function checkDogs(dogsJulia, dogsKate) {
 }
 
 checkDogs([3,5,2,7,12],[4,1,15,8,3])
+
+
+// Working with map
+console.log('-------Using Function------')
+
+const eurToUsd = 1.1;
+const movementUSD = movements.map(function(mov){
+    return mov * eurToUsd;
+});
+console.log(movementUSD)
+
+// Using arroy function
+console.log('-------Using Arow Statement------')
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+console.log(movementsUSD)
+
+// console.log(movements)
+// console.log(movementUSD)
+
+// using loop statement 
+console.log('-------LOOP------')
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd)
+    console.log(movementsUSDfor)
+
+const movementDescription = movements.map((mov, i) => 
+`Movement ${i + 1}: You ${mov > 0 ? 'deposited': 'withdrow'} ${Math.abs(mov)}`
+);
+
+console.log(movementDescription)
