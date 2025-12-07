@@ -78,6 +78,30 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+// implementing current balance
+
+const calcPrintBalance = function(movements){
+    const balance = movements.reduce((acc,mov) => acc + mov, 0);
+    labelBalance.textContent = `${balance} EUR`
+};
+calcPrintBalance(account1.movements)
+
+console.log('---------Computing Username!----------');
+
+const createUsernames = function(acc) {
+    acc.forEach(function(acc){
+        acc.username = acc.owner
+        .toLowerCase()
+        .split(' ')
+        .map(name => name[0])
+        .join(' ');
+    });
+
+};
+createUsernames(accounts);
+
+console.log('------------Computing Username!--------');
+
 // console.log(containerMovements.innerHTML);
 
 /////////////////////////////////////////////////
@@ -221,3 +245,45 @@ const movementDescription = movements.map((mov, i) =>
 );
 
 console.log(movementDescription)
+
+
+
+// Filter Method
+console.log("Fiter Mehod")
+const deposit = movements.filter(function(mov){
+    return mov > 0;
+});
+
+console.log(movements);
+console.log(deposit);
+
+const depositFor = [];
+for(const mov of movements) if(mov > 0) depositFor.push(mov);
+console.log(depositFor);
+
+
+const withdrowels = []
+const withdrowel = movements.filter(mov => mov < 0);
+for(const move of movements) if(move < 0) withdrowels.push(move);
+console.log(withdrowels)
+console.log(withdrowel)
+
+// Reduce Method
+console.log("--------Reduce method--------")
+console.log(movements)
+
+const balance = movements.reduce((acc,cur) => acc + cur);
+console.log(balance)
+
+
+// console.log(`Iteration ${i}: ${acc}`)
+
+// MAXIMUM VALUE
+const max = movements.reduce((acc,mov) => {
+    if (acc > mov){
+        return acc;   
+    }else
+        return mov
+}, movements[0]);
+
+console.log(max)
