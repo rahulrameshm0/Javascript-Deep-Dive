@@ -154,40 +154,55 @@ btnLogin.addEventListener('click', function (event) {
             alert("Username or password incorrect!"),
             containerApp.style.opacity = 0
         )
-
+        
         // clear input
         inputLoginUsername.value = inputLoginPin.value = '';
         inputLoginPin.blur()
-
-
+        
+        
         // Update UI
         updateUI(currentAccount)
-
+        
         
     });
+    
+    
+    // Transfer input
+    
+    btnTransfer.addEventListener('click', function(e){
+        e.preventDefault();
+        const amount = (Number(inputTransferAmount.value));
+        const receiverAcc = accounts
+        .find(acc => acc.username === inputTransferTo.value);
+        // console.log(amount, receiverAcc);
+        inputTransferAmount.value = inputTransferTo.value = ''
+        
+        if (amount > 0 && receiverAcc && currentAccount.balance >= amount && 
+            receiverAcc?.username !== currentAccount.username){
+                currentAccount.movements.push(-amount);
+                receiverAcc.movements.push(amount);
+            }
+            
+            // Update UI
+            updateUI(currentAccount)
+            
+        });
+        
+        btnClose.addEventListener('click', function(e){
+            e.preventDefault();
+            inputCloseUsername.value = inputClosePin.value = ''
+            
+            if (inputCloseUsername.value === currentAccount.username 
+                && Number(inputClosePin.value) === currentAccount.pin){
+                    const index = accounts.findIndex(
+                        acc => acc.username === currentAccount.username)
+                        accounts.splice(index, 1);
+                        containerApp.style.opacity = 0;
 
+                    }
+                    console.log(accounts)
+                });
 
-// Transfer input
-
-btnTransfer.addEventListener('click', function(e){
-    e.preventDefault();
-    const amount = (Number(inputTransferAmount.value));
-    const receiverAcc = accounts
-    .find(acc => acc.username === inputTransferTo.value);
-    // console.log(amount, receiverAcc);
-    inputTransferAmount.value = inputTransferTo.value = ''
-
-    if (amount > 0 && receiverAcc && currentAccount.balance >= amount && 
-        receiverAcc?.username !== currentAccount.username){
-            currentAccount.movements.push(-amount);
-            receiverAcc.movements.push(amount);
-        }
-
-         // Update UI
-        updateUI(currentAccount)
-
-});
-
-
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
+                /////////////////////////////////////////////////
+                /////////////////////////////////////////////////
+                
