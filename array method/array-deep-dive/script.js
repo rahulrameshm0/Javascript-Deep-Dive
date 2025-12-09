@@ -404,21 +404,43 @@ const movements = [400, 450, -400, 3000, -650, -130, 70, 1300];
 
 
 // Equality
-console.log(movements.includes(-130));
+// console.log(movements.includes(-130));
 
-// SOME: Condition
-console.log(movements.some(mov => mov === -130));
+// // SOME: Condition
+// console.log(movements.some(mov => mov === -130));
 
-const anyDeposits = movements.some(mov => mov > 0);
-console.log(anyDeposits)
+// const anyDeposits = movements.some(mov => mov > 0);
+// console.log(anyDeposits)
 
 // Every
-console.log(movements.every(mov => mov > 0));
-console.log(account4.movements.every(mov => mov > 0));
+// console.log(movements.every(mov => mov > 0));
+// console.log(account4.movements.every(mov => mov > 0));
 
 // Seprate callback
-console.log('Separate every callback');
-const deposit = mov => mov > 0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
-console.log(movements.filter(deposit));
+// console.log('Separate every callback');
+// const deposit = mov => mov > 0;
+// console.log(movements.some(deposit));
+// console.log(movements.every(deposit));
+// console.log(movements.filter(deposit));
+
+
+// Flat and maoFlat method
+
+const arr1 = [1,2,3,[4,5,6], [789,23,56], 56,14,45];
+console.log(arr1.flat());
+const arr2 = [1,2,3,[4,[5,6]], [78],9,[23,56], [56,[14,45]]];
+console.log(arr2.flat(2));
+
+// Flat
+const overbalance = accounts
+.map(acc => acc.movements)
+.flat()
+.reduce((acc,mov) => acc + mov, 0);
+console.log(overbalance);
+
+// Flatmap
+const overbalance2 = accounts
+    .flatMap(acc => acc.movements)
+    .reduce((acc,mov) => acc + mov, 0);
+console.log(overbalance2);
+
