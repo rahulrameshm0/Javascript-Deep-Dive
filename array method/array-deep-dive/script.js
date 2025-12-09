@@ -380,9 +380,6 @@ const movements = [400, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(totalDepositInUsd )
 
 
-
-
-
 // const calcAverageHumanAges = ages => ages
 // .map(ages => (ages <= 2 ? 2 * ages :16 * 4))
 // .filter(age => age >= 18)
@@ -404,3 +401,24 @@ const movements = [400, 450, -400, 3000, -650, -130, 70, 1300];
 
 // const account = accounts.find(acc => acc.owner === 'Jessica Davis');
 // console.log(account)
+
+
+// Equality
+console.log(movements.includes(-130));
+
+// SOME: Condition
+console.log(movements.some(mov => mov === -130));
+
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits)
+
+// Every
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+// Seprate callback
+console.log('Separate every callback');
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
