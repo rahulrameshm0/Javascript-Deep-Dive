@@ -444,3 +444,39 @@ const overbalance2 = accounts
     .reduce((acc,mov) => acc + mov, 0);
 console.log(overbalance2);
 
+
+// sort
+
+const oweners = ["Rahul", "Manu", "Ammu", "Yuvi", "Lexhmi"];
+
+console.log(oweners.sort())
+console.log(oweners)
+
+// numbers
+console.log(movements);
+// console.log(movements.sort());
+
+
+// return < 0, A, B (keep order)
+// return < 0, B, A (switch ord)
+
+// Ascending 
+// movements.sort((a,b) => {
+//     if (a > b){return 1}
+
+//     if (b > a){return -1}
+// });
+
+movements.sort((a, b) => a - b);
+console.log(movements);
+
+// Descending
+// movements.sort((a,b) => {
+    //     if (a > b){return 1}
+    
+    //     if (b > a){return -1}
+    // });
+movements.sort((a, b) => b - a);
+console.log(movements);
+
+
